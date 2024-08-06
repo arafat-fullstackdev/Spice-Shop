@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Cart({ cartItems }){
+function Cart({ cartItems, removeFromCart }){
      const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
 
      return(
@@ -10,6 +10,7 @@ function Cart({ cartItems }){
             {cartItems.map((item, index) => (
                 <li key={index}>
                     {item.name} - ${item.price}
+                    <button onClick={() => removeFromCart(item)}>Remove</button>
                 </li>
             ))}
           </ul>
