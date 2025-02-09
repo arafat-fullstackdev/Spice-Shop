@@ -1,4 +1,5 @@
 import React from 'react';
+import './product.css';
 
 const products = [
     {id:1, name: 'Laptop', price:'1100'},
@@ -8,11 +9,11 @@ const products = [
 
 function ProductList({ addToCart }) {
     return (
-        <div>
+        <div className='product-list'>
             <h2>Products</h2>
             <ul>
                 {products.map(product => (
-                    <li key={product.id}>
+                    <li key={product.id} className='product-item'>
                         {product.name} -${product.price}
                         <button onClick={() => addToCart(product)}>Add to Cart</button>
                     </li>
